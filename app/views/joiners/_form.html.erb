@@ -1,0 +1,32 @@
+<%= form_for(joiner) do |f| %>
+  <% if joiner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(joiner.errors.count, "error") %> prohibited this joiner from being saved:</h2>
+
+      <ul>
+      <% joiner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :expense %>
+    <%= f.text_field :expense %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %>
+    <%= f.text_field :type %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
